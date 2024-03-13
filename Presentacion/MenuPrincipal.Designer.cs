@@ -59,6 +59,7 @@
             pictureBox1 = new PictureBox();
             PanelBienvenida = new Panel();
             label2 = new Label();
+            PanelPadre = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel16.SuspendLayout();
@@ -82,7 +83,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(263, 749);
+            panel1.Size = new Size(265, 694);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -93,9 +94,9 @@
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel4);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 265);
+            panel3.Location = new Point(0, 210);
             panel3.Name = "panel3";
-            panel3.Size = new Size(263, 484);
+            panel3.Size = new Size(265, 484);
             panel3.TabIndex = 3;
             // 
             // panel16
@@ -106,7 +107,7 @@
             panel16.Dock = DockStyle.Top;
             panel16.Location = new Point(0, 232);
             panel16.Name = "panel16";
-            panel16.Size = new Size(263, 58);
+            panel16.Size = new Size(265, 58);
             panel16.TabIndex = 4;
             // 
             // btn_Estaciones
@@ -121,7 +122,7 @@
             btn_Estaciones.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Estaciones.Location = new Point(16, 10);
             btn_Estaciones.Name = "btn_Estaciones";
-            btn_Estaciones.Size = new Size(247, 48);
+            btn_Estaciones.Size = new Size(249, 48);
             btn_Estaciones.TabIndex = 3;
             btn_Estaciones.Text = "Estaciones";
             btn_Estaciones.UseVisualStyleBackColor = false;
@@ -139,7 +140,7 @@
             panel18.Dock = DockStyle.Top;
             panel18.Location = new Point(0, 0);
             panel18.Name = "panel18";
-            panel18.Size = new Size(263, 10);
+            panel18.Size = new Size(265, 10);
             panel18.TabIndex = 0;
             // 
             // panel13
@@ -150,7 +151,7 @@
             panel13.Dock = DockStyle.Top;
             panel13.Location = new Point(0, 174);
             panel13.Name = "panel13";
-            panel13.Size = new Size(263, 58);
+            panel13.Size = new Size(265, 58);
             panel13.TabIndex = 3;
             // 
             // btn_Respaldo
@@ -165,7 +166,7 @@
             btn_Respaldo.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Respaldo.Location = new Point(16, 10);
             btn_Respaldo.Name = "btn_Respaldo";
-            btn_Respaldo.Size = new Size(247, 48);
+            btn_Respaldo.Size = new Size(249, 48);
             btn_Respaldo.TabIndex = 3;
             btn_Respaldo.Text = "Respaldo";
             btn_Respaldo.UseVisualStyleBackColor = false;
@@ -183,7 +184,7 @@
             panel15.Dock = DockStyle.Top;
             panel15.Location = new Point(0, 0);
             panel15.Name = "panel15";
-            panel15.Size = new Size(263, 10);
+            panel15.Size = new Size(265, 10);
             panel15.TabIndex = 0;
             // 
             // panel10
@@ -194,7 +195,7 @@
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(0, 116);
             panel10.Name = "panel10";
-            panel10.Size = new Size(263, 58);
+            panel10.Size = new Size(265, 58);
             panel10.TabIndex = 2;
             // 
             // btn_RestaurarDB
@@ -209,7 +210,7 @@
             btn_RestaurarDB.ImageAlign = ContentAlignment.MiddleLeft;
             btn_RestaurarDB.Location = new Point(16, 10);
             btn_RestaurarDB.Name = "btn_RestaurarDB";
-            btn_RestaurarDB.Size = new Size(247, 48);
+            btn_RestaurarDB.Size = new Size(249, 48);
             btn_RestaurarDB.TabIndex = 3;
             btn_RestaurarDB.Text = "Restaurar BD";
             btn_RestaurarDB.UseVisualStyleBackColor = false;
@@ -227,7 +228,7 @@
             panel12.Dock = DockStyle.Top;
             panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
-            panel12.Size = new Size(263, 10);
+            panel12.Size = new Size(265, 10);
             panel12.TabIndex = 0;
             // 
             // panel7
@@ -238,7 +239,7 @@
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(0, 58);
             panel7.Name = "panel7";
-            panel7.Size = new Size(263, 58);
+            panel7.Size = new Size(265, 58);
             panel7.TabIndex = 1;
             // 
             // btn_Usuarios
@@ -253,7 +254,7 @@
             btn_Usuarios.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Usuarios.Location = new Point(16, 10);
             btn_Usuarios.Name = "btn_Usuarios";
-            btn_Usuarios.Size = new Size(247, 48);
+            btn_Usuarios.Size = new Size(249, 48);
             btn_Usuarios.TabIndex = 3;
             btn_Usuarios.Text = "Usuarios";
             btn_Usuarios.UseVisualStyleBackColor = false;
@@ -271,7 +272,7 @@
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(263, 10);
+            panel9.Size = new Size(265, 10);
             panel9.TabIndex = 0;
             // 
             // panel4
@@ -282,7 +283,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(263, 58);
+            panel4.Size = new Size(265, 58);
             panel4.TabIndex = 0;
             // 
             // btn_Registro
@@ -297,7 +298,7 @@
             btn_Registro.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Registro.Location = new Point(16, 10);
             btn_Registro.Name = "btn_Registro";
-            btn_Registro.Size = new Size(247, 48);
+            btn_Registro.Size = new Size(249, 48);
             btn_Registro.TabIndex = 3;
             btn_Registro.Text = "Registro";
             btn_Registro.UseVisualStyleBackColor = false;
@@ -315,7 +316,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(263, 10);
+            panel5.Size = new Size(265, 10);
             panel5.TabIndex = 0;
             // 
             // btn_Persona
@@ -328,10 +329,11 @@
             btn_Persona.ForeColor = SystemColors.ControlLightLight;
             btn_Persona.Location = new Point(0, 134);
             btn_Persona.Name = "btn_Persona";
-            btn_Persona.Size = new Size(263, 41);
+            btn_Persona.Size = new Size(265, 41);
             btn_Persona.TabIndex = 2;
             btn_Persona.Text = "Personal";
             btn_Persona.UseVisualStyleBackColor = false;
+            btn_Persona.Click += btn_Persona_Click;
             // 
             // btn_Consultas
             // 
@@ -343,7 +345,7 @@
             btn_Consultas.ForeColor = SystemColors.ControlLightLight;
             btn_Consultas.Location = new Point(0, 86);
             btn_Consultas.Name = "btn_Consultas";
-            btn_Consultas.Size = new Size(263, 48);
+            btn_Consultas.Size = new Size(265, 48);
             btn_Consultas.TabIndex = 1;
             btn_Consultas.Text = "Pre Planilla";
             btn_Consultas.UseVisualStyleBackColor = false;
@@ -356,7 +358,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(263, 86);
+            panel2.Size = new Size(265, 86);
             panel2.TabIndex = 1;
             // 
             // label1
@@ -366,7 +368,7 @@
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(126, 0);
             label1.Name = "label1";
-            label1.Size = new Size(137, 86);
+            label1.Size = new Size(139, 86);
             label1.TabIndex = 1;
             label1.Text = "Usuario";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -394,7 +396,7 @@
             // PanelBienvenida
             // 
             PanelBienvenida.Controls.Add(label2);
-            PanelBienvenida.Location = new Point(339, 49);
+            PanelBienvenida.Location = new Point(509, 178);
             PanelBienvenida.Name = "PanelBienvenida";
             PanelBienvenida.Size = new Size(484, 226);
             PanelBienvenida.TabIndex = 1;
@@ -412,14 +414,23 @@
             label2.Text = "Bienvenido";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // PanelPadre
+            // 
+            PanelPadre.Dock = DockStyle.Right;
+            PanelPadre.Location = new Point(271, 0);
+            PanelPadre.Name = "PanelPadre";
+            PanelPadre.Size = new Size(1045, 694);
+            PanelPadre.TabIndex = 2;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(1204, 749);
+            ClientSize = new Size(1316, 694);
             Controls.Add(PanelBienvenida);
             Controls.Add(panel1);
+            Controls.Add(PanelPadre);
             Name = "MenuPrincipal";
             Text = "MenuPrincipal";
             WindowState = FormWindowState.Maximized;
@@ -470,5 +481,6 @@
         private PictureBox pictureBox2;
         private Panel PanelBienvenida;
         private Label label2;
+        private Panel PanelPadre;
     }
 }

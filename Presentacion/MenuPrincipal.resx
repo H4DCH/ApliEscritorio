@@ -121,7 +121,7 @@
   <data name="btn_Estaciones.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQdSURBVFhHzZZN
+        5AAAAOQBXaJ52AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQdSURBVFhHzZZN
         bFRVFMfHj4URcWEXuoDOvDdvpq/z2qlYdUFK4lJkYbQdEaK1YIG2oNAYBRSxJrVN0BrQSKqlLRBZYDRp
         UoQFMSYuXJiwIISEkEjUwR0LmXn3vXs7Mx7PaQ+Zj777puIs/CU3Pf/2vp577j33nhP5X1C8/vSm0tXO
         m8XLnVC8hOOXJ6DwM46f1kHhx8ehcBHHhY5s8Xz7Rv5Ei388NSY/b1XyaCvICRvkERv88RbwR3F8mAT/
@@ -145,7 +145,7 @@
   <data name="btn_Respaldo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARrSURBVFhHzZd/
+        5AAAAOQBXaJ52AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARrSURBVFhHzZd/
         bFNVFMfvurbvta+ddMiATQyYAYGS2hEz6DZcEMbYgmDQjT8Iuo1fCzojEhgV3Aa4ZUlJYIsSkIBGUNER
         dG4UWRRHCPvDaGKIxn8MoEGMQYVJ2dj62uM59/U1r7Xtuq1Gvskn99fpPefee959r+xBUxZSaRKYZ5KN
         9U2wsBsWM/tLMLBB7AfRyO4/ZGH9WZns1oxsdgXHD5B96Hfj0iO2DOZFB0OlLvb3vi0s4G1ncOUjBte7
@@ -171,7 +171,7 @@
   <data name="btn_RestaurarDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOfSURBVFhHtZdZ
+        5AAAAOQBXaJ52AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOfSURBVFhHtZdZ
         bExRGMen03bamamtFBGJ6iBI7A2VIKFDF7En9mgi00GqilbFVhNBKOFFhEQ9IHhoSHghIiKWB7EmloiH
         PimR2KK1ROX4/+/pmZx7586YmZp/8suc9fu+c/OdZRwJKBtMAyvAJrAVBMBUkANSpjmgGXwB98E5cAQc
         AKc6276Cq2A+SAP/RRPBHfAUrAK5IJq8YDl4AB4Bzu2S1oJ3gI6dbIhTXP0SwLn1bEhGjeA5KDBq0VUO

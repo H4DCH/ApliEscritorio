@@ -19,7 +19,15 @@ namespace PruebaEscritorio.Presentacion
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            PanelBienvenida.Dock = DockStyle.Fill;  
+            PanelBienvenida.Dock = DockStyle.Fill;
+        }
+
+        private void btn_Persona_Click(object sender, EventArgs e)
+        {
+            PanelPadre.Controls.Clear();
+            Personal personal = new Personal();
+            personal.Dock = DockStyle.Fill;
+            PanelPadre.Controls.Add(personal);
         }
     }
 }
