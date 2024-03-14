@@ -36,6 +36,7 @@
             panel3 = new Panel();
             textBox1 = new TextBox();
             PanelCargos = new Panel();
+            btnVolverCargos = new Button();
             label12 = new Label();
             label13 = new Label();
             flowLayoutPanel2 = new FlowLayoutPanel();
@@ -47,7 +48,9 @@
             panel11 = new Panel();
             txtCargoNew = new TextBox();
             label11 = new Label();
-            dataGridView1 = new DataGridView();
+            dataListadoPersonal = new DataGridView();
+            Editar = new DataGridViewImageColumn();
+            Eliminar = new DataGridViewImageColumn();
             PanelPaginado = new Panel();
             button8 = new Button();
             button3 = new Button();
@@ -59,15 +62,16 @@
             label6 = new Label();
             PanelRegistroPersonal = new Panel();
             DataListadoCargos = new DataGridView();
-            button6 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            editarC = new DataGridViewImageColumn();
+            btnVolverPersonal = new Button();
+            panelBtnGuardarPersonal = new FlowLayoutPanel();
             btnGuardarCambiosPersonal = new Button();
             btnGuardarPersonal = new Button();
             AgregarCargo = new Button();
             cbxPais = new ComboBox();
             panel9 = new Panel();
             txtSueldo = new TextBox();
-            label5 = new Label();
+            lblSueldo = new Label();
             panel8 = new Panel();
             txtCargo = new TextBox();
             panel6 = new Panel();
@@ -82,11 +86,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelCargos.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataListadoPersonal).BeginInit();
             PanelPaginado.SuspendLayout();
             PanelRegistroPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataListadoCargos).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
+            panelBtnGuardarPersonal.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -161,6 +165,7 @@
             // 
             // PanelCargos
             // 
+            PanelCargos.Controls.Add(btnVolverCargos);
             PanelCargos.Controls.Add(label12);
             PanelCargos.Controls.Add(label13);
             PanelCargos.Controls.Add(flowLayoutPanel2);
@@ -170,10 +175,26 @@
             PanelCargos.Controls.Add(panel11);
             PanelCargos.Controls.Add(txtCargoNew);
             PanelCargos.Controls.Add(label11);
-            PanelCargos.Location = new Point(472, 3);
+            PanelCargos.Location = new Point(238, 28);
             PanelCargos.Name = "PanelCargos";
             PanelCargos.Size = new Size(522, 257);
             PanelCargos.TabIndex = 19;
+            // 
+            // btnVolverCargos
+            // 
+            btnVolverCargos.BackColor = Color.Transparent;
+            btnVolverCargos.BackgroundImage = (Image)resources.GetObject("btnVolverCargos.BackgroundImage");
+            btnVolverCargos.BackgroundImageLayout = ImageLayout.Zoom;
+            btnVolverCargos.FlatAppearance.BorderSize = 0;
+            btnVolverCargos.FlatStyle = FlatStyle.Flat;
+            btnVolverCargos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolverCargos.ForeColor = Color.White;
+            btnVolverCargos.Location = new Point(384, 5);
+            btnVolverCargos.Name = "btnVolverCargos";
+            btnVolverCargos.Size = new Size(135, 59);
+            btnVolverCargos.TabIndex = 27;
+            btnVolverCargos.UseVisualStyleBackColor = false;
+            btnVolverCargos.Click += btnVolverCargos_Click;
             // 
             // label12
             // 
@@ -217,6 +238,7 @@
             btnGuardarc.TabIndex = 2;
             btnGuardarc.Text = "Guardar*";
             btnGuardarc.UseVisualStyleBackColor = false;
+            btnGuardarc.Click += btnGuardarc_Click;
             // 
             // btnGuardar
             // 
@@ -289,25 +311,45 @@
             label11.TabIndex = 18;
             label11.Text = "Cargo";
             // 
-            // dataGridView1
+            // dataListadoPersonal
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.FromArgb(29, 29, 29);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 154);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(29, 29, 29);
-            dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Gray;
-            dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1345, 505);
-            dataGridView1.TabIndex = 1;
+            dataListadoPersonal.AllowUserToAddRows = false;
+            dataListadoPersonal.AllowUserToDeleteRows = false;
+            dataListadoPersonal.AllowUserToResizeRows = false;
+            dataListadoPersonal.BackgroundColor = Color.FromArgb(29, 29, 29);
+            dataListadoPersonal.BorderStyle = BorderStyle.None;
+            dataListadoPersonal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataListadoPersonal.Columns.AddRange(new DataGridViewColumn[] { Editar, Eliminar });
+            dataListadoPersonal.Dock = DockStyle.Fill;
+            dataListadoPersonal.Location = new Point(0, 154);
+            dataListadoPersonal.Name = "dataListadoPersonal";
+            dataListadoPersonal.ReadOnly = true;
+            dataListadoPersonal.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(29, 29, 29);
+            dataListadoPersonal.RowTemplate.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataListadoPersonal.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
+            dataListadoPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Transparent;
+            dataListadoPersonal.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListadoPersonal.RowTemplate.Height = 40;
+            dataListadoPersonal.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataListadoPersonal.Size = new Size(1345, 505);
+            dataListadoPersonal.TabIndex = 1;
+            dataListadoPersonal.CellClick += dataListadoPersonal_CellClick;
+            // 
+            // Editar
+            // 
+            Editar.HeaderText = "";
+            Editar.Image = (Image)resources.GetObject("Editar.Image");
+            Editar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Editar.Name = "Editar";
+            Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            Eliminar.HeaderText = "";
+            Eliminar.Image = (Image)resources.GetObject("Eliminar.Image");
+            Eliminar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Eliminar.Name = "Eliminar";
+            Eliminar.ReadOnly = true;
             // 
             // PanelPaginado
             // 
@@ -431,13 +473,13 @@
             PanelRegistroPersonal.BackColor = Color.FromArgb(29, 29, 29);
             PanelRegistroPersonal.Controls.Add(DataListadoCargos);
             PanelRegistroPersonal.Controls.Add(PanelCargos);
-            PanelRegistroPersonal.Controls.Add(button6);
-            PanelRegistroPersonal.Controls.Add(flowLayoutPanel1);
+            PanelRegistroPersonal.Controls.Add(btnVolverPersonal);
+            PanelRegistroPersonal.Controls.Add(panelBtnGuardarPersonal);
             PanelRegistroPersonal.Controls.Add(AgregarCargo);
             PanelRegistroPersonal.Controls.Add(cbxPais);
             PanelRegistroPersonal.Controls.Add(panel9);
             PanelRegistroPersonal.Controls.Add(txtSueldo);
-            PanelRegistroPersonal.Controls.Add(label5);
+            PanelRegistroPersonal.Controls.Add(lblSueldo);
             PanelRegistroPersonal.Controls.Add(panel8);
             PanelRegistroPersonal.Controls.Add(txtCargo);
             PanelRegistroPersonal.Controls.Add(panel6);
@@ -461,37 +503,52 @@
             DataListadoCargos.AllowUserToDeleteRows = false;
             DataListadoCargos.AllowUserToOrderColumns = true;
             DataListadoCargos.AllowUserToResizeRows = false;
+            DataListadoCargos.BackgroundColor = Color.White;
             DataListadoCargos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataListadoCargos.Location = new Point(526, 259);
+            DataListadoCargos.ColumnHeadersVisible = false;
+            DataListadoCargos.Columns.AddRange(new DataGridViewColumn[] { editarC });
+            DataListadoCargos.Location = new Point(238, 250);
             DataListadoCargos.Name = "DataListadoCargos";
+            DataListadoCargos.ReadOnly = true;
+            DataListadoCargos.RowHeadersVisible = false;
             DataListadoCargos.RowTemplate.Height = 25;
             DataListadoCargos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DataListadoCargos.Size = new Size(199, 77);
+            DataListadoCargos.Size = new Size(261, 77);
             DataListadoCargos.TabIndex = 20;
+            DataListadoCargos.CellClick += DataListadoCargos_CellClick;
             // 
-            // button6
+            // editarC
             // 
-            button6.BackColor = Color.Transparent;
-            button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
-            button6.BackgroundImageLayout = ImageLayout.Zoom;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(696, 14);
-            button6.Name = "button6";
-            button6.Size = new Size(135, 59);
-            button6.TabIndex = 18;
-            button6.UseVisualStyleBackColor = false;
+            editarC.HeaderText = "";
+            editarC.Image = (Image)resources.GetObject("editarC.Image");
+            editarC.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            editarC.Name = "editarC";
+            editarC.ReadOnly = true;
             // 
-            // flowLayoutPanel1
+            // btnVolverPersonal
             // 
-            flowLayoutPanel1.Controls.Add(btnGuardarCambiosPersonal);
-            flowLayoutPanel1.Controls.Add(btnGuardarPersonal);
-            flowLayoutPanel1.Location = new Point(238, 342);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(417, 62);
-            flowLayoutPanel1.TabIndex = 17;
+            btnVolverPersonal.BackColor = Color.Transparent;
+            btnVolverPersonal.BackgroundImage = (Image)resources.GetObject("btnVolverPersonal.BackgroundImage");
+            btnVolverPersonal.BackgroundImageLayout = ImageLayout.Zoom;
+            btnVolverPersonal.FlatAppearance.BorderSize = 0;
+            btnVolverPersonal.FlatStyle = FlatStyle.Flat;
+            btnVolverPersonal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolverPersonal.ForeColor = Color.White;
+            btnVolverPersonal.Location = new Point(696, 14);
+            btnVolverPersonal.Name = "btnVolverPersonal";
+            btnVolverPersonal.Size = new Size(135, 59);
+            btnVolverPersonal.TabIndex = 18;
+            btnVolverPersonal.UseVisualStyleBackColor = false;
+            btnVolverPersonal.Click += btnVolverPersonal_Click;
+            // 
+            // panelBtnGuardarPersonal
+            // 
+            panelBtnGuardarPersonal.Controls.Add(btnGuardarCambiosPersonal);
+            panelBtnGuardarPersonal.Controls.Add(btnGuardarPersonal);
+            panelBtnGuardarPersonal.Location = new Point(235, 333);
+            panelBtnGuardarPersonal.Name = "panelBtnGuardarPersonal";
+            panelBtnGuardarPersonal.Size = new Size(246, 49);
+            panelBtnGuardarPersonal.TabIndex = 17;
             // 
             // btnGuardarCambiosPersonal
             // 
@@ -540,7 +597,7 @@
             // 
             cbxPais.FormattingEnabled = true;
             cbxPais.Items.AddRange(new object[] { "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "Guatemala", "Haití", "Honduras", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "Puerto Rico", "República Dominicana", "Uruguay", "Venezuela" });
-            cbxPais.Location = new Point(238, 147);
+            cbxPais.Location = new Point(235, 152);
             cbxPais.Name = "cbxPais";
             cbxPais.Size = new Size(264, 29);
             cbxPais.TabIndex = 15;
@@ -564,15 +621,15 @@
             txtSueldo.TabIndex = 13;
             txtSueldo.KeyPress += txtSueldo_KeyPress;
             // 
-            // label5
+            // lblSueldo
             // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(59, 291);
-            label5.Name = "label5";
-            label5.Size = new Size(58, 21);
-            label5.TabIndex = 12;
-            label5.Text = "Sueldo";
+            lblSueldo.AutoSize = true;
+            lblSueldo.ForeColor = Color.White;
+            lblSueldo.Location = new Point(59, 291);
+            lblSueldo.Name = "lblSueldo";
+            lblSueldo.Size = new Size(58, 21);
+            lblSueldo.TabIndex = 12;
+            lblSueldo.Text = "Sueldo";
             // 
             // panel8
             // 
@@ -587,7 +644,7 @@
             txtCargo.BackColor = Color.FromArgb(29, 29, 29);
             txtCargo.BorderStyle = BorderStyle.None;
             txtCargo.ForeColor = Color.White;
-            txtCargo.Location = new Point(238, 220);
+            txtCargo.Location = new Point(235, 222);
             txtCargo.Name = "txtCargo";
             txtCargo.Size = new Size(264, 22);
             txtCargo.TabIndex = 10;
@@ -596,7 +653,7 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Location = new Point(238, 117);
+            panel6.Location = new Point(238, 115);
             panel6.Name = "panel6";
             panel6.Size = new Size(264, 2);
             panel6.TabIndex = 7;
@@ -624,7 +681,7 @@
             txtNombres.BackColor = Color.FromArgb(29, 29, 29);
             txtNombres.BorderStyle = BorderStyle.None;
             txtNombres.ForeColor = Color.White;
-            txtNombres.Location = new Point(238, 33);
+            txtNombres.Location = new Point(235, 33);
             txtNombres.Name = "txtNombres";
             txtNombres.Size = new Size(264, 22);
             txtNombres.TabIndex = 4;
@@ -674,31 +731,32 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelRegistroPersonal);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataListadoPersonal);
             Controls.Add(PanelPaginado);
             Controls.Add(panel1);
             Name = "Personal";
             Size = new Size(1345, 743);
+            Load += Personal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelCargos.ResumeLayout(false);
             PanelCargos.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataListadoPersonal).EndInit();
             PanelPaginado.ResumeLayout(false);
             PanelPaginado.PerformLayout();
             PanelRegistroPersonal.ResumeLayout(false);
             PanelRegistroPersonal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DataListadoCargos).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
+            panelBtnGuardarPersonal.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private DataGridView dataGridView1;
+        private DataGridView dataListadoPersonal;
         private Panel PanelPaginado;
         private PictureBox pictureBox1;
         private Panel panel3;
@@ -711,7 +769,7 @@
         private ComboBox cbxPais;
         private Panel panel9;
         private TextBox txtSueldo;
-        private Label label5;
+        private Label lblSueldo;
         private Panel panel8;
         private TextBox txtCargo;
         private Panel panel6;
@@ -720,10 +778,10 @@
         private TextBox txtNombres;
         private Button AgregarCargo;
         private Button btnAgregarPersonal;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel panelBtnGuardarPersonal;
         private Button btnGuardarPersonal;
         private Button btnGuardarCambiosPersonal;
-        private Button button6;
+        private Button btnVolverPersonal;
         private Button button7;
         private Button button8;
         private Button button9;
@@ -746,5 +804,9 @@
         private TextBox txtCargoNew;
         private Label label11;
         private DataGridView DataListadoCargos;
+        private DataGridViewImageColumn editarC;
+        private Button btnVolverCargos;
+        private DataGridViewImageColumn Editar;
+        private DataGridViewImageColumn Eliminar;
     }
 }

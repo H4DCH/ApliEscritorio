@@ -106,6 +106,28 @@ namespace PruebaEscritorio.Datos
                 Conexion.cerrar();
             }
         }
+        public bool RestaurarPersonal(Lpersonal lpersonal)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("RestaurarPersonal", Conexion.Conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdPersonal", lpersonal.IdPersonal);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+
         public void BuscarPersonal(ref DataTable dt, int Desde, int Hasta, string Buscador)
         {
             try

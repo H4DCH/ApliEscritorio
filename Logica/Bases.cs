@@ -11,8 +11,14 @@ namespace PruebaEscritorio.Logica
     {
         public static void DiseñoDTV(ref DataGridView listados)
         {
-            listados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; 
-
+            listados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            listados.BackgroundColor = Color.FromArgb(29,29,29);
+            listados.EnableHeadersVisualStyles = false;
+            listados.BorderStyle = BorderStyle.None;
+            DataGridViewCellStyle cabecera = new DataGridViewCellStyle();
+            cabecera.ForeColor=Color.Black;
+            cabecera.Font = new Font("segoe UI",10,FontStyle.Bold);
+            listados.ColumnHeadersDefaultCellStyle = cabecera;
 
         }
         public static object Decimales( TextBox texto,KeyPressEventArgs e)
